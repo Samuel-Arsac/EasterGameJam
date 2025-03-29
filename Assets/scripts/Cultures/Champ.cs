@@ -47,6 +47,16 @@ public class Champ : MonoBehaviour
 		return number == MAX_CULTURE;
 	}
 
+    public bool isOneCellIsReady()
+    {
+        for (int i = (number == 0) ? 0 : number - 1; i < number - 1; i++)
+        {
+            if (cultures[i].getState() == 2)
+                return true; 
+        }
+        return false;
+    }
+
     void Start()
     {
     }

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flag_of_France_0: -8228335842135051716
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
