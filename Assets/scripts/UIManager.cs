@@ -1,16 +1,44 @@
 using UnityEngine;
+using UnityEngine.UI;
+using NaughtyAttributes;
+
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    #region Singleton:Profile
+
+    public static UIManager Instance;
+
+    void Awake ()
     {
-        
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy (gameObject);
+    }
+    #endregion
+
+    [SerializeField] private GameObject shopMenu;
+    [SerializeField] private Button shopButton;
+
+    private void Start()
+    {
+        hideShop();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void displayShop()
     {
-        
+        shopMenu.SetActive (true);
+        shopButton.onClick.RemoveAllListeners();
+        shopButton.onClick.AddListener(hideShop);
     }
+
+    public void hideShop()
+    {
+        shopButton.onClick.RemoveAllListeners();
+        shopButton.onClick.AddListener(displayShop);
+        shopMenu.SetActive(false);
+    }
+
+
 }
