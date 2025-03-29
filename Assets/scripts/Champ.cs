@@ -1,7 +1,7 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
+using UnityEditor.Experimental.GraphView;
+using Math.round;
 
 public class Champ : MonoBehaviour
 {
@@ -9,13 +9,13 @@ public class Champ : MonoBehaviour
     private int cost;
     private int number = 0;
     private int upgradePointer = 0;
-    private ICulture[] cultures = new ICulture[25];
-    private ICulture cultureTester;
+    private IFarmable[] cultures = new IFarmable[25];
+    private IFarmable cultureTester;
 
 
     /*
      * method name: addCulture
-     * param: Culture culture
+     * param: IFarmable culture
      * return: void
      * 
      * Add culture to a Champ, if the max number of culture is already there,
@@ -23,7 +23,7 @@ public class Champ : MonoBehaviour
      * 
      * Called when the player want to add a new culture to his champ.
      */
-    public void AddCulture(ICulture culture)
+    public void AddCulture(IFarmable culture)
     { 
         if (cultureTester.getType() != culture.getType()){
             Debug.Log("Warning: Try to add wrong culture type " + culture.getType() + " to the Champs of type : " + cultureTester.getType());
@@ -32,19 +32,23 @@ public class Champ : MonoBehaviour
         if (number < MAX_CULTURE){
             cultures[number] = culture;
             number++;
-        }else{ //TODO: Uncomment the line when method "upgrade()" is implemented in the Culture class.
-            //cultures[upgradePointer].upgrade();
+        }else{
+			cultures[upgradePointer].upgrade();
             upgradePointer = (upgradePointer + 1)%MAX_CULTURE;
         }
+		cost = Math.Round(cost*1.25);
+    }
+	
+	public bool isFull(){
+		return number == MAX_CULTURE;
+	}
+
+    void Start(IFarmable tester)
+    {
+		this.cultureTester = tester;
     }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
+    void Update(){
         
     }
 }

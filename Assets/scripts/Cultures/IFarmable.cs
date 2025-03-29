@@ -2,7 +2,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public interface ICulture
+public interface IFarmable
 { 
     public string getType();
     public int getState();
@@ -12,5 +12,4 @@ public interface ICulture
 
     public void upgrade();
     public int collect();
-
 }

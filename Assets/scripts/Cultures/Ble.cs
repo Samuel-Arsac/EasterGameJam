@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Ble : ICulture
+public class Ble : MonoBehaviour, IFarmable
 {
     public GameObject ble;
     private string type;
     private int state;
-    private int level;
+	private int level;
     private int collectNumber;
     
 
@@ -42,7 +42,7 @@ public class Ble : ICulture
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        state = 0;        
+             
     }
 
     // Update is called once per frame
