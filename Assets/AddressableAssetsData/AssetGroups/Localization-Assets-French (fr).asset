@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-French (fr)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-French (fr)
+  m_GUID: c0dcd787b09feb34893e99d20e8dca8b
+  m_SerializeEntries:
+  - m_GUID: ad2065de22d37d94e92b00bf977d7788
+    m_Address: Flag_of_the_United_Kingdom
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 5236ce7fdc1aefe4a9bf326de557186e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2a96dbd225e107d4ca1f5ab6bcf94d6d, type: 2}
+    - {fileID: 11400000, guid: e2412aab1a714ef4fa1a46749cb16e8c, type: 2}
