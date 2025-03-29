@@ -1,17 +1,19 @@
+using System;
 using UnityEngine;
 
 public class Ble : MonoBehaviour, IFarmable
 {
     public GameObject ble;
-    private string type;
+    private const string TYPE = "blé";
     private int state;
 	private int level;
     private int collectNumber;
-    
+    private const double growTime = 5;
+	private double timer;
 
     public string getType()
     {
-        return type;
+        return TYPE;
     }
 
     public int getState()
@@ -26,7 +28,9 @@ public class Ble : MonoBehaviour, IFarmable
 
     public int collect()
     {
-        return -1;
+        state = 0;
+		timer = 0;
+		return collectNumber;
     }
 
     public int getCollectNumber()
@@ -39,15 +43,34 @@ public class Ble : MonoBehaviour, IFarmable
         return level;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-             
-    }
+	public Ble(int st, int lv)
+	{
+		state = st;
+		level = lv;
+
+		//Calcul of the timer
+		if (state != 2){
+			if (state == 0)
+				timer = (double)0;
+			else
+				timer = growTime/2;
+		}
+
+		//Calcul of the collectNumber
+		collectNumber = (int)Math.Ceiling(Math.Pow(2, level));
+	}
 
     // Update is called once per frame
     void Update()
     {
-        
+		if (state != 2){
+			timer += Time.deltaTime;
+
+			if (timer >= growTime && state == 1)
+				state = 2;
+
+			if (timer >= (growTime/2) && state == 0)
+				state = 1;
+		}
     }
 }
