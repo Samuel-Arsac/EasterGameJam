@@ -7,12 +7,12 @@ public class UIManager : MonoBehaviour
 {
     #region Singleton:Profile
 
-    public static UIManager Instance;
+    public static UIManager instance;
 
     void Awake ()
     {
-        if (Instance == null)
-            Instance = this;
+        if (instance == null)
+            instance = this;
         else
             Destroy (gameObject);
     }
@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject shopMenu;
     [SerializeField] private Button shopButton;
+    [SerializeField] private GameObject[] purchasableItems;
 
     private void Start()
     {
