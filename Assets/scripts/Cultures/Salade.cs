@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class Ble : MonoBehaviour, IFarmable
+public class Salade : MonoBehaviour, IFarmable
 {
-    public GameObject ble;
-    private const string TYPE = "blé";
-    private int state;
+	public GameObject salade;
+	private const string type = "salade";
+	private int state;
 	private int level;
     private int collectNumber;
     private const double growTime = 5;
@@ -43,7 +43,7 @@ public class Ble : MonoBehaviour, IFarmable
         return level;
     }
 
-	public Ble(int st, int lv)
+	public Salade(int st, int lv)
 	{
 		state = st;
 		level = lv;
@@ -57,15 +57,6 @@ public class Ble : MonoBehaviour, IFarmable
 		}
 
 		//Calcul of the collectNumber
-<<<<<<< Updated upstream
-		collectNumber = (int)Math.Ceiling(Math.Pow(2, level));
-	}
-
-    // Update is called once per frame
-    void Update()
-    {
-		if (state != 2){
-=======
 		collectNumber = (int)Math.Ceiling(Math.Pow(level, 2));
 	}
 
@@ -73,7 +64,6 @@ public class Ble : MonoBehaviour, IFarmable
     void Update()
     {
 		if (state != 2){
->>>>>>> Stashed changes
 			timer += Time.deltaTime;
 
 			if (timer >= growTime && state == 1)
@@ -83,4 +73,5 @@ public class Ble : MonoBehaviour, IFarmable
 				state = 1;
 		}
     }
+
 }
