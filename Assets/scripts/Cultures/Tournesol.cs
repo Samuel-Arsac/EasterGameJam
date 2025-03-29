@@ -4,7 +4,7 @@ using UnityEngine;
 public class Tournesol : MonoBehaviour, IFarmable
 {
 	public GameObject tournesol;
-	private const string type = "tournesol";
+	private const string TYPE = "tournesol";
 	private int state;
 	private int level;
     private int collectNumber;

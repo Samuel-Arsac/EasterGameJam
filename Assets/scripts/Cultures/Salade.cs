@@ -4,7 +4,7 @@ using UnityEngine;
 public class Salade : MonoBehaviour, IFarmable
 {
 	public GameObject salade;
-	private const string type = "salade";
+	private const string TYPE = "salade";
 	private int state;
 	private int level;
     private int collectNumber;

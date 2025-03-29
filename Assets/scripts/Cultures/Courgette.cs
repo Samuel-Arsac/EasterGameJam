@@ -4,7 +4,7 @@ using UnityEngine;
 public class Courgette : MonoBehaviour, IFarmable
 {
 	public GameObject courgette;
-	private const string type = "courgette";
+	private const string TYPE = "courgette";
 	private int state;
 	private int level;
     private int collectNumber;

@@ -57,15 +57,6 @@ public class Ble : MonoBehaviour, IFarmable
 		}
 
 		//Calcul of the collectNumber
-<<<<<<< Updated upstream
-		collectNumber = (int)Math.Ceiling(Math.Pow(2, level));
-	}
-
-    // Update is called once per frame
-    void Update()
-    {
-		if (state != 2){
-=======
 		collectNumber = (int)Math.Ceiling(Math.Pow(level, 2));
 	}
 
@@ -73,7 +64,6 @@ public class Ble : MonoBehaviour, IFarmable
     void Update()
     {
 		if (state != 2){
->>>>>>> Stashed changes
 			timer += Time.deltaTime;
 
 			if (timer >= growTime && state == 1)
