@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEditor.Experimental.GraphView;
-using Math.round;
 
 public class Champ : MonoBehaviour
 {
@@ -12,6 +11,11 @@ public class Champ : MonoBehaviour
     private IFarmable[] cultures = new IFarmable[25];
     private IFarmable cultureTester;
 
+
+	public void setCultureTester(IFarmable tester)
+	{
+		this.cultureTester = tester;
+	}
 
     /*
      * method name: addCulture
@@ -36,16 +40,15 @@ public class Champ : MonoBehaviour
 			cultures[upgradePointer].upgrade();
             upgradePointer = (upgradePointer + 1)%MAX_CULTURE;
         }
-		cost = Math.Round(cost*1.25);
+		cost = (int)Math.Ceiling(cost*1.25);
     }
 	
 	public bool isFull(){
 		return number == MAX_CULTURE;
 	}
 
-    void Start(IFarmable tester)
+    void Start()
     {
-		this.cultureTester = tester;
     }
 
     void Update(){
